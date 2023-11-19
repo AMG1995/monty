@@ -3,12 +3,12 @@
 /**
 * addnode - add node to top of stack
 * @head: first node
-* @n: new value
+* @new: new value
 *
 * Return: none
 */
 
-void addnode(stack_t **head, int n)
+void addnode(stack_t **head, int new)
 {
 	stack_t *new_node, *temp;
 
@@ -17,14 +17,15 @@ void addnode(stack_t **head, int n)
 
 	if (new_node == NULL)
 	{
-		printf("Error\n");
+		printf("this is Error\n");
 		exit(0);
 	}
 	if (temp)
 		temp->prev = new_node;
 
-	new_node->n = n;
+	new_node->new = new;
 	new_node->next = *head;
 	new_node->prev = NULL;
 	*head = new_node;
 }
+
